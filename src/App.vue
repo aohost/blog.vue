@@ -1,10 +1,13 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <a-layout>
+      <a-layout-header>Header</a-layout-header>
+      <a-layout-content>
+        <p>主页</p>  
+        <router-view/>
+      </a-layout-content>
+      <a-layout-footer>Footer</a-layout-footer>
+    </a-layout>
   </div>
 </template>
 
@@ -17,16 +20,7 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.ant-layout-header{
+  background: #fff !important;
 }
 </style>
