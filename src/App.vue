@@ -1,26 +1,29 @@
 <template>
-  <div id="app">
+  <div id="app" v-cloak>
     <a-layout>
-      <a-layout-header>Header</a-layout-header>
-      <a-layout-content>
-        <p>主页</p>  
-        <router-view/>
-      </a-layout-content>
-      <a-layout-footer>Footer</a-layout-footer>
+      <loading></loading>
+      <layout-header></layout-header>
+      <layout-body></layout-body>
+      <layout-footer></layout-footer>
     </a-layout>
   </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import LayoutBody from '@/components/layout/layout-body.vue'
+import Loading from './components/loading.vue'
+import LayoutHeader from './components/layout/layout-header.vue'
+import LayoutFooter from './components/layout/layout-footer.vue'
+export default {
+  name:'app',
+  components: { Loading, LayoutHeader, LayoutBody, LayoutFooter },
+  
 }
+</script>
 
-.ant-layout-header{
-  background: #fff !important;
-}
+<style lang="less">
+  #app {
+      font-size: 17px;
+      color: #6f6f6f;
+  }
 </style>
